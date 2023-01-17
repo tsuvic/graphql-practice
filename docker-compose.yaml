@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  graphql_postgres:
+    build:
+      context:  ./postgres/
+      dockerfile: build/Dockerfile
+    image: graphql_postgres
+    container_name: graphql_postgres
+    env_file:
+      - ./postgres/env/.env
+    volumes:
+      - ./postgres/data:/var/lib/posgresql/data
+
+  #https://www.cview.co.jp/cvcblog/2020.09.23.yN1U0r8fLlc4XF-i8Mx7K
+  graphql_adminer:
+    build:
+      context: ./adminer/
+      dockerfile: build/Dockerfile
+    image: graphql_adminer
+    container_name: graphql_adminer
+    env_file:
+      - ./adminer/env/.env
+    ports:
+      - 8010:8080
+    depends_on:
+      - graphql_postgres
+
+  graphql:
+    build: 
+      context: ./graphql/
+      dockerfile: build/Dockerfile
+    image: graphql
+    container_name: graphql
+    env_file:
+      - ./graphql/env/.env
+    ports:
+      - "8011:3000"
+    volumes:
+      - "./graphql/app:/home/express/app"
+    tty: true
