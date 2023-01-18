@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@apollo/server": "^4.3.0",
     "@graphql-tools/graphql-file-loader": "^7.5.14",
