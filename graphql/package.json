@@ -1,17 +1,14 @@
 {
-  "name": "graphql",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
-    "apollo-server-express": "^3.11.1",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "^3.1.8",
+    "@apollo/server": "^4.3.0",
+    "@graphql-tools/graphql-file-loader": "^7.5.14",
+    "@graphql-tools/load": "^7.8.9",
+    "@graphql-tools/schema": "^9.0.13",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "fs": "^0.0.1-security",
+    "graphql": "^16.6.0",
+    "graphql-tools": "^8.3.15"
   }
 }
