@@ -16,6 +16,7 @@ type Post {
 type Query {
   posts: [Post]
   author(id: ID!): Author
+  findBookById(id: ID): Book
 }
 
 type Mutation {
@@ -25,6 +26,13 @@ type Mutation {
 schema {
   query: Query
   mutation: Mutation
+}
+
+type Book {
+  id: ID,
+  title: String,
+  author: String,
+  price: Int,
 }
 
 

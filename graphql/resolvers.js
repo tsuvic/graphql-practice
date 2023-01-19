@@ -1,3 +1,5 @@
+import findBookById from "./app/queries/book/findBookById.js";
+
 const resolvers = {
   Query: {
     posts: () => [
@@ -7,6 +9,7 @@ const resolvers = {
     author: (root, { id }, context) => {
       return { id: 1, firstName: 'John', lastName: 'Doe' }
     },
+    findBookById: findBookById,
   },
   Mutation: {
     upvotePost: (root, { postId }, context) => {
@@ -19,6 +22,5 @@ const resolvers = {
     }
   }
 };
-
 
 export default resolvers

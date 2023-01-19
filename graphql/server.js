@@ -9,7 +9,7 @@ import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import resolvers from './resolvers.mjs';
+import resolvers from './resolvers.js';
 import { join } from 'node:path'
 import { loadSchemaSync } from '@graphql-tools/load'
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader'
