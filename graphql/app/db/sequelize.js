@@ -2,7 +2,6 @@ import { Sequelize } from "sequelize";
 import * as dotenv from 'dotenv'
 
 const env = dotenv.config({path: process.cwd()+'/env/.env'});
-
 const sequelize = new Sequelize(
     env.parsed.RDB_DB_DATABASE,
     env.parsed.RDB_DB_USER,
@@ -10,7 +9,7 @@ const sequelize = new Sequelize(
     {
         // 接続先ホストを指定
         host: env.parsed.RDB_DB_ENDPOINT,
-        port: process.env.RDB_DB_PORT,
+        port: env.parsed.RDB_DB_PORT,
 
         // logging: console.log,
         maxConcurrentQueries: 100,
